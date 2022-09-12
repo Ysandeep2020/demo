@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Collections;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +25,7 @@ public class UserController {
 	@GetMapping("/add")
 	public List<User> add() {
 		List<User> list = null;
-		///LoggingExecutionTimeBySpringAOP/users.json
+		/// LoggingExecutionTimeBySpringAOP/users.json
 		File file = new File("users.json");
 		try {
 			list = service.setUserByJsonFile(file);
@@ -39,5 +40,13 @@ public class UserController {
 			e.printStackTrace();
 		}
 		return list;
+	}
+
+	/**
+	 *  this use for get all Users
+	 * @return
+	 */
+	public List<User> getUsers() {
+		return Collections.emptyList();
 	}
 }
