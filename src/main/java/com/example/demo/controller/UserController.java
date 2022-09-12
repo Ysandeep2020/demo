@@ -29,13 +29,7 @@ public class UserController {
 		File file = new File("users.json");
 		try {
 			list = service.setUserByJsonFile(file);
-		} catch (StreamReadException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (DatabindException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -43,11 +37,12 @@ public class UserController {
 	}
 
 	/**
-	 *  this use for get all Users
+	 * this use for get all Users
+	 * 
 	 * @return
 	 */
 	public List<User> getUsers() {
-		//TODO  please map to Repository as soon as possible
+		// TODO please map to Repository as soon as possible
 		return Collections.emptyList();
 	}
 }
